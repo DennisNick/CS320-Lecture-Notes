@@ -1,0 +1,33 @@
+(*
+fun intsqrt(n: int): int =
+  if n >= 2 then let
+    val res1 = intsqrt(n /4)
+    val res2 = 2 * res1
+  in 
+    if (res2 + 1)*(res2 + 1) <= n then res2+1 else res2
+  end else n
+*)
+
+extern 
+fun solve(n: int): int 
+and fun solve$base(n: int): int  // Dollar sign is a convention for self-solving functions
+and fun solve$base_test(n: int): bool
+and fun solve$recurse_alg(n: int): int
+and fun solve$merge_after(n: int, res: int): int
+
+(* Notice, this is a usage of the re-using strategy, using simple functions to ease the burden of the bigger and more complex algorithm at large. *)
+
+implement 
+solve(n) = 
+  if solve$base_test(n)
+    then solve$base(n)
+  else let
+    val res = solve(solve$recurse_alg(n))
+  in
+    solve$merge_after(n, res)
+  end 
+   
+
+(* The hard part is now implementing the specialty functions, but this "plumbing" is direct and reasonable, and the overall problem is simplified greatly *)
+
+ 
