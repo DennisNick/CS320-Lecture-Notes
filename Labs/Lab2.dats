@@ -1,4 +1,4 @@
-#inlcude "share/atspre_staload.hats"
+/* #inlcude "share/atspre_staload.hats" */
 
 /* Basic Expression syntax */
 (*
