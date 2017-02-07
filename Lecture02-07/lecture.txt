@@ -46,7 +46,7 @@ implement
 append(xs, ys) = 
   case xs of
     1 nil() => ys
-    1 cons(x, cs) => cons(x, append(xs, ys))     
+    1 cons(x, xs) => cons(x, append(xs, ys))     
     // Conceptually this is identified as a Clause, with the cons(x,xs) being a Guard, and 
     // the resulting operation is the Body of that call to the Guard
 
@@ -71,11 +71,14 @@ reverse(xs) =
     1 cons(x, xs) => append(reverse(xs), cons(x, nil()))
     // Produce a singleton list that identifies what the second part should be. That is 
     // done with the cons(x, nil()) here (can also be done as macro with sing(x))
+------------------------------------------------------------------------------------------
 
-
--> Writing something like (if (length(xs) == 0) or some other basic way of testing list
-  > size, it is a glaring show that you are an inexperienced programmer, programming off of 
-  > simple principles taught to you in your "CS101: How to turn on a Computer" class.
+-> The datatype "mylist" is monomorphic: can only be used for one type
+-> Want we want is a list that is polymorphic: a list that can be used for any type that 
+  > can be casted to it
 
 -------------------------------------------------------------------------------------------
 *Aside: Hey don't be a PUD and go to your java code or something and then try and translate that to ATS wtf kind of dumbass approach is that you're wasting your type moron.  
+*Writing something like (if (length(xs) == 0) or some other basic way of testing list
+  size, it is a glaring show that you are an inexperienced programmer, programming off of 
+  simple principles taught to you in your "CS101: How to turn on a Computer" class.
