@@ -1,23 +1,18 @@
-datatype 
-mylist = 
-  | mylist_nil of ()
-  | mylist_cons of (int, mylist)
+datatype
+mylist2(a:t@ype) =
+  | mylist2_nil of ()
+  | mylist2_cons of (a, mylist2i(a))
 
-#define nil mylist_nil
-#define cons mylist_cons
-#define :: mylist_cons // An infix
+typedef mylist2_int = mylist2(int)
+typedef mylist2_string = mylist2(string)
+// typedef mylist2_type = mylist2(type)
 
-val xs0 = nil()
-val xs1 = cons(1, xs0)
-val xs2 = cons(2, xs1)
-val xs3 = 3 :: xs2
-val xs4 = $showtype(4 :: xs3)
-
+// This is template based code that cnanot generate object files
 extern
-fun length: mylist -> int
-and append: mylist, mylist -> mylist
-and reverse: mylist -> mylist
-and is_nil: mylist -> bool
+fun{a:t@ype} length: mylist2(a) -> int
+and append: mylist2(a), mylist2(a) -> mylist2(a)
+and reverse: mylist2(a) -> mylist2(a)
+and is_nil: mylist2(a) -> bool
 
 // O(n)
 implement

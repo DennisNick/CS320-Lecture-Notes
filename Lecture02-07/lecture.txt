@@ -76,7 +76,10 @@ reverse(xs) =
 -> The datatype "mylist" is monomorphic: can only be used for one type
 -> Want we want is a list that is polymorphic: a list that can be used for any type that 
   > can be casted to it
-
+-> @ sign means a flat concept, and if you do mylist(a: t@ype) you get a size of the type
+  > that is unspecified
+  > Then you can use mylist2_cons of (a, mylist2(a)) to build a list of any type
+  > See the mylist.dats and poly_list.dats files
 -------------------------------------------------------------------------------------------
 *Aside: Hey don't be a PUD and go to your java code or something and then try and translate that to ATS wtf kind of dumbass approach is that you're wasting your type moron.  
 *Writing something like (if (length(xs) == 0) or some other basic way of testing list
