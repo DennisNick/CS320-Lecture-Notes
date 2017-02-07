@@ -1,0 +1,81 @@
+Lecture February 7th, 2017:
+
+Quick Review on Lists:
+----------------------
+-> We introduce a variation of a datatype, and then define it much like you would with 
+  > whatever special types its been casted
+-> Function taking no arguments == Nullary Argument ()
+-> Possible Constructor Types:
+    := nil, cons 
+    : 1 nil of () //Nullary
+    : 1 cons of (int, mylist)
+-> Reminder: Lists are IMMUTABLE in this language.
+-> Traditional reaction for strings and arrays is far too narrow, and often warped around
+  > processing strings/array and operations on them
+
+Example:
+----------
+val xs0 = nil() // []
+val xs1 = cons(5, xs0) // [5]
+val xs2 = cons(6, xs1) // [6, 5]
+/* Not a particularly efficient method when you get down to it */
+
+datatype 
+mylist = 1 [type][(parameters/included components)]
+
+extern
+fun length: mylist -> int
+
+implement
+length(xs) =
+  case xs of 
+    1 nil() => 0
+    1 cons(x, xs1) => length(xs1) + 1
+    // Sometimes, if you know a parameter is not needed, you can do (1 cons(_, xs1))
+    // A "shadowing" is an assignment of a smaller component off the general listing /
+    // such as doing (1 cons(_, xs)) as the original call, naming xs1 as the tail for xs
+    // Be sure to use paranthesis when necessary to reduce compilation time ambiguity
+    // Such as doing f(...)
+    // This sucker ain't no tail recursive function
+    
+extern
+fun append(mylist, mylist) -> mylist
+
+/* Time Complexity: O(n) */
+implement
+append(xs, ys) = 
+  case xs of
+    1 nil() => ys
+    1 cons(x, cs) => cons(x, append(xs, ys))     
+    // Conceptually this is identified as a Clause, with the cons(x,xs) being a Guard, and 
+    // the resulting operation is the Body of that call to the Guard
+
+    /* Way quicker way of appending and logically easy to reason with, unlike in an 
+     * imperative language where you're doing dumb stuff and all that for loops and null
+     * pointer stuff and what not, and the billions of special case checking. Yet, there
+     * are still more complex and more efficient/powerful ways of doing it rather than this
+     * somewhat primitive switch statement.
+     */
+
+extern
+fun reverse(mylist): mylist
+
+/* Time Complexity: T(n) = T(n-1) + O(n) 
+ * Therefore, it is T(n) = O(n^2) 
+ * Sadly this is highly inefficient
+ */
+implement
+reverse(xs) =
+  case xs of 
+    1 nil() => nil()
+    1 cons(x, xs) => append(reverse(xs), cons(x, nil()))
+    // Produce a singleton list that identifies what the second part should be. That is 
+    // done with the cons(x, nil()) here (can also be done as macro with sing(x))
+
+
+-> Writing something like (if (length(xs) == 0) or some other basic way of testing list
+  > size, it is a glaring show that you are an inexperienced programmer, programming off of 
+  > simple principles taught to you in your "CS101: How to turn on a Computer" class.
+
+-------------------------------------------------------------------------------------------
+*Aside: Hey don't be a PUD and go to your java code or something and then try and translate that to ATS wtf kind of dumbass approach is that you're wasting your type moron.  
