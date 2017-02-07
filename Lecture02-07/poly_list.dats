@@ -10,34 +10,49 @@ typedef mylist2_string = mylist2(string)
 // This is template based code that cnanot generate object files
 extern
 fun{a:t@ype} length: mylist2(a) -> int
-and append: mylist2(a), mylist2(a) -> mylist2(a)
-and reverse: mylist2(a) -> mylist2(a)
-and is_nil: mylist2(a) -> bool
+and{a:t@ype} append: mylist2(a), mylist2(a) -> mylist2(a)
+and{a:t@ype} reverse: mylist2(a) -> mylist2(a)
+and{a:t@ype} is_nil: mylist2(a) -> bool
+and{a:t@ype} reverse_append: mylist2(a), mylist2(a) -> mylist2(a)
+and{a:t@ype} fast_reverse: mylist2(a), mylist2(a) -> mylist2(a)
 
 // O(n)
-implement
+implement{a}
 length(xs) =
   case xs of
-    | nil() => 0
-    | cons(_,xs) => 1 + length(xs)
+    | mylist2_nil() => 0
+    | mylist2_cons(_,xs) => 1 + length<a>(xs)
 
 // O(n)
-implement
+implement{a}
 append(xs, ys) =
   case xs of
-    | nil() => nil()
-    | cons(x, xs) => cons(x, append(xs, ys))
+    | mylist2_nil() => nil()
+    | mylist2_cons(x, xs) => cons(x, append<a>(xs, ys))
 
 // O(1)
-implement
+implement{a}
 is_nil(xs) =
   case xs of 
-    | nil() => true
-    | cons(_,_) => false
+    | mylist2_nil() => true
+    | mylist2_cons(_,_) => false
 
 // O(n^2)
-implement 
+implement{a}
 reverse(xs) =
   case xs of
-    | nil() => nil()
-    | cons(x, xs) => append(reverse(xs, cons(x, nil()))) // can replace cons(x, nil()) with sing(x)
+    | mylist2_nil() => nil()
+    | mylist2_cons(x, xs) => append<a>(reverse<a>(xs, cons(x, nil()))) 
+    // can replace cons(x, nil()) with sing(x)
+
+// O(n)
+implement{a}
+reverse_append(xs, ys) =
+  case xs of 
+    | mylist2_nil() => ys
+    | mylist2_cons(x, xs) => reverse_append<a>(xs, cons(x, ys))
+
+// O(n)
+implement{a}
+fast_reverse(xs) =
+  reverse_append<a>(xs, nil())
