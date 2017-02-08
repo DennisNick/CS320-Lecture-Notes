@@ -80,6 +80,13 @@ reverse(xs) =
   > that is unspecified
   > Then you can use mylist2_cons of (a, mylist2(a)) to build a list of any type
   > See the mylist.dats and poly_list.dats files
+
+Assignment:
+-----------
+-> Back on solve-one-recur example:
+-> Turn that shit into a template
+-> We'll do that next time or something I guess idk
+
 -------------------------------------------------------------------------------------------
 *Aside: Hey don't be a PUD and go to your java code or something and then try and translate that to ATS wtf kind of dumbass approach is that you're wasting your type moron.  
 *Writing something like (if (length(xs) == 0) or some other basic way of testing list
