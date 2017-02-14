@@ -67,3 +67,8 @@ val xs = g0ofg1($list(int)(0, 1, 2, 3, 4))
 -> Combinators make the entire assignment issue seemingly pass on to the Netherworld. 
   > It's power comes from it's efficiency.
 
+-> Down in the ATS library, here's a useful tool: list_foldleft => More or less a summative
+  > function that will always generate the sum that spans the length of a list. 
+  > list_foldright works symmetric to foldleft, except in one area: foldleft is a tail-recur
+  > call, which means it doesn't use much memory. Foldright will utlimately brick your cpu 
+  > for large lists.

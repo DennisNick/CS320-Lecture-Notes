@@ -47,7 +47,11 @@ list0_filter_cloref(xs, test) =
 
 /* g0ofg1 is a form of casting */
 val xs = g0ofg1($list(int)(0, 1, 2, 3, 4))
-
 val xs2 = list0_map_cloref<int><int>(xs, lam x => 2 * x)
-
 val ys2 = list0_filter_cloref<int>(xs, lam x => x <= 4)
+
+(*
+// Dot Notation
+val xs3 = xs.map(TYPE{int})(lam x => 2 * x)
+val ys3 = xs.filter()(lam x => x <= 4)
+*)
