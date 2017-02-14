@@ -1,0 +1,69 @@
+February 14th, Lecture Notes:
+-----------------------------
+
+Repo Instruction Review:
+-> Hey don't mess with anything in non-MySolutions folders
+-> Hey if you do go delete it after you merge
+-> Hey stop being a Richard
+-> Go to Cloud9, pick on preview of something for a HTML file to look at it and what not.
+-> More kickass Sierprinski Triangles, nice
+
+Ok, Actual Lecture time:
+------------------------
+-> Combinators: Allows you to do things in a more efficient way, perhaps even just
+  > one-liners for things like loops
+-> Be ready with exceptional logic here, in the literal programming way
+
+--------------------------------------------------------------------------------------------
+(* 
+** Operations on list0-values
+*)
+
+datatype list0(a:t@ype) =
+  | list0_nil of ()
+  | list0_cons of (a, list0(a))
+
+extern
+fun {a:t@ype}{b:t@ype} list0_map_cloref(xs: list0(a), fopr: (a) <cloref1> b)
+
+// {a:t@ype}{b:t@ype} = list0_map_cloref<int><string>
+// {a,b:t@ype} = list0_map_cloref<int, string>
+(*
+implement{a}{b}
+list0_map_cloref(xs, fopr) =
+  case xs of
+  | list0_nil() => list0_nil()
+  | list0_cons(x, xs) => list0_cons(fopr(x), list0_map_cloref<a><b>(xs, fopr))
+
+* This style is a tad bit messy
+*)
+
+/* Compiler friendly */
+implement{a}{b}
+list0_map_cloref(xs, fopr) =
+  fun aux(xs: list0(a)): list0(b)
+  (
+  case+ xs of
+  | list0_nil() => list0_nil()
+  | list0_cons(x, xs) => list0_cons(fopr(x), aux(xs))
+  )
+}  
+
+implement{a}
+list0_filter_cloref(xs, test) =
+  fun aux(xs: list0(a)): list0(b)
+  (
+  case+ xs of
+  | list0_nil() => list0_nil()
+  | list0_cons(x, xs) => if test(x) then list0_cons(x, aux(xs)) else aux(xs)
+  )
+}
+
+/* g0ofg1 is a form of casting */
+val xs = g0ofg1($list(int)(0, 1, 2, 3, 4))
+
+--------------------------------------------------------------------------------------------
+
+-> Combinators make the entire assignment issue seemingly pass on to the Netherworld. 
+  > It's power comes from it's efficiency.
+
