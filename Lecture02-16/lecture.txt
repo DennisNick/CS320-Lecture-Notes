@@ -61,7 +61,7 @@ list0_mult(xs) =
       | list0_cons(x, xs) => if(x = 0) then $raise ZERO else ( x * list0_mult(xs) )
     )
   in
-    aux(xs)
+    try aux(xs) with ~ZERO() => 0
   end
 
 --------------------------------------------------------------------------------------------

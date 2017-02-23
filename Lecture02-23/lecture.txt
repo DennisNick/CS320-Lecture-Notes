@@ -1,0 +1,38 @@
+February 23rd Lecture Notes:
+----------------------------
+
+We're talking Templates today.
+
+Package Management System: npm
+
+Templates:
+----------
+-> So quick pep talk about Divide-and-Conquer algorithms, with a nice little segway into 
+  > Template talk
+-> The generalization of a divide-and-conquer algorithm allows for altering the passed in 
+  > parameter and the like, such as setting up skeleton code in clear terms.
+-> So really, knowing a language is neat and all, but being able to articulate an 
+  > algorithm with the code in a general manner is critical
+-> Here comes in templates, a general library-tier shell of skeleton code that can be 
+  > re-implemented, altered, and quite literally trashed to fit whatever the specific needs
+  > the programmer has for an algorithm/problem.
+-> Parallelization -- A generic understanding of this ability to change/re-implement the 
+  > skeleton code to solve a specific problem
+-> So there is a less exhaustive approach in the code if it is broken up into a greater
+  > amount of smaller, yet still reasonable functions
+-> In truth, if a template file is provided, you don't need to know the nitty gritty bits. 
+  > Just focus more on re-implementing to fit a need, rather than reconstruct the need 
+  > for no real efficient reason
+-> Depies: Dependencies that handle upstream issues (Someone else wants to use yours)
+-> Libies: Libraries that handle downstream issue (You want to use someone else's)
+-> BTW: Avoid debugging
+-> Another tricky thing: Template functions can branch out to other functions that are also
+  > template functions and have re-implementations, so it will continually branch out.
+  > That's how termination is finally completed -- when the template re-implementations 
+  > stop being branched out
+
+-> In ATS, there are two forms of syntactical logic: Expresions and Declarations.
+  > Using local can use declarations
+  > using let is for expressions
+
+-> atsruntime error = malloc/memory allocation problem
