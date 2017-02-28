@@ -33,3 +33,5 @@ Back to Divide and Conquer:
 -> Base cases can be dangerous, when a fall to length of 1 can not ever be divided down 
   > beyond this 1, and due to this lack of true change to the value can lead to an infinite 
   > loop
+
+-> We'll be doing some parallelism stuff soon
