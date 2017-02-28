@@ -36,3 +36,12 @@ Templates:
   > using let is for expressions
 
 -> atsruntime error = malloc/memory allocation problem
+
+-> In that fibonacci file, change r2 to r1 and change the base case to 1 to get 2^n
+
+Weird Recursive function:
+fun f91(x) =
+  if (x > 100)  
+    then x - 10
+  else 
+    f91(f91(x+11))

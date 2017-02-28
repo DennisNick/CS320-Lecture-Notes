@@ -1,0 +1,35 @@
+February 28th Notes
+-------------------
+Midterm Thursday: Take-home. Distributed during the day. Due at Midnight.
+
+Write a Makefile if not given. 
+May see a Divide and Conquer question even.
+Goes all the way up to the most recent HW.
+Will probably need to write your own test code.
+
+Back to Divide and Conquer:
+---------------------------
+-> The logic behind D&Q is pretty intuitive and straightforward
+-> Get a problem, if you can solve it immediately then do so, otherwise split it to smaller
+  > sub-problems that are more easily solvable
+
+-> So, in ATS, the template base that he's working off of is just a series of smaller 
+  > functions to help chop up the sub-problems.
+-> Order is important for divided sub-problems on the off chance of non-commutative tasks
+-> They work in reverse of the outside divisive problem
+-> The minus sign (-) in front of a val-list0_etc is just a way for declaring 
+  > non-exhaustive pattern matching in ATS. The compiler is unaware of programmer's need
+  > for non-exhaustive sub-problem solutions.
+-> The plus sign (+) also works in this way, but it forces exhaustive pattern matching, 
+  > rather than non-exhaustive.
+
+-> The reverse implementation with list combinators is also achievable in D&Q, simply by
+  > breaking up the sources and reversing them, then appending them. This offers no 
+  > appreciable time gain though over something like mergesort.  
+
+-> Good ol' McCarthy91 is just a fundamental abstract function that tests the proper 
+  > compiler control of recursive functions.
+
+-> Base cases can be dangerous, when a fall to length of 1 can not ever be divided down 
+  > beyond this 1, and due to this lack of true change to the value can lead to an infinite 
+  > loop
