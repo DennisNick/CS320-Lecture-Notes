@@ -15,3 +15,6 @@ Beware of the {VAR} versus <TYPE> need with functions.
 Tuples -> Flats vs Boxes
 Flat = Whole name containing the memory for all objects in the tuple
 Box = The adress of the tuple values (1 level indirection)
+
+
+choose(n, i) --> choose(n-1, i) + choose(n-1, i-1)
