@@ -1,0 +1,17 @@
+Types talks
+-----------
+
+List0 is a family of types, just a grouping of the types that work this way. 
+Type casting for a datatype constructors is crucial, otherwise it'l blah out on you.
+
+Good ol pattern matching and binding, there's two ways he shows here, one with a simply case connection, and the other with just a match against (x :: xs)
+
+This pattern matching also works for tuples of lists.
+
+So you can make lists of varying types simply by declaring them. 
+
+Beware of the {VAR} versus <TYPE> need with functions.
+
+Tuples -> Flats vs Boxes
+Flat = Whole name containing the memory for all objects in the tuple
+Box = The adress of the tuple values (1 level indirection)
