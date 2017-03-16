@@ -1,0 +1,40 @@
+Lecture March 16th
+------------------
+
+How ya been?
+Good? Good.
+Anyhow, let's get going. 
+
+General
+-------
+-> Remember the high level form of philosophy versus the low level nitty-gritty plumbing.
+-> Not so much about the immediate solution, but more about the global problem.
+-> Ideas of D&Q, Multi-core programming, etc.
+
+Exceptions
+----------
+-> Remember the true usage of an Exception: Resetting the stack frame. 
+-> Exception calling is more about catching the error as it rises to the stack, and then 
+  > examine what the exception is, determine it, and then take it or let it go
+-> With is like a case call, |~ both necessary
+-> Exceptions are both time and memory friendly.
+
+fun ml(xs) =
+  let
+    exception Zero of ()
+    exception Nine of ()
+    fun aux(xs) = 
+      case xs of 
+      |  nil() => 1
+      | cons(x, xs) => if(x = 0) then $raise(Zero) else if (x = 9) then $raise(Nine)
+                       else  x * aux(xs)
+  in
+    try aux(xs) 
+    with 
+      |~Zero() => 0
+      |~Nine() => 0
+  end
+
+-> Brauntree = Binary Tree that is almost perfectly balanced. Left - Right = 0 or 1
+-> Using an exception in the brauntree.dats file helps mitigate a highly time inefficient 
+  > and memory intensive algorithm
