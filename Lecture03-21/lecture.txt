@@ -1,0 +1,25 @@
+March 1st Notes
+---------------
+
+Beginning:
+----------
+-> So a little bit of graph talk, specifically talking about neighbor interaction
+-> Dijkstra's talk essentially, the "cheapest" path. 
+-> Basically, we're learning Graph searches and so forth.
+-> Graph Search means finding all the nodes...in a graph! Amazing!
+-> Coin jar type explanation for it. Where you look at a node, then throw its neightbors 
+  > into the jar, and then pick a coin out of the jar and do the same. 
+-> BFS vs DFS in ATS -> BFS is if its a Queue of immediate neighbors, DFS with a stack of em
+-> Search for the thing online is tail recusive, necessary because there could be many
+  > nodes that could potentially crash the stack if not done tail recursively.
+-> Be careful of double counting or looping nodes, mark them accordingly.
+-> Option is just a listing, Some means at least 1 element, None means none. EZ, right?
+-> So, for the homework thing just change the combine or something idk
+-> The nodes in the thing are treated releatively similarly to a sub-problem when you think
+  > about the neighbors.
+-> Now a days, things got a lots of dependices and packages based programming and stuffs.
+-> npm package stuff
+-> Stream is apparently a lazy list.
+
+Point of this lecture was more about learning of the usefulness of implementing a file 
+  given both a downloaded package of modules as well as through graph search utilities.
