@@ -1,0 +1,30 @@
+March 23rd Notes
+----------------
+
+-> Some: A list of at most length 1, kind of a critical semantic here.
+-> Some stuff and I guess
+
+Streams
+-------
+-> The good ol' lazy list
+-> Apparently like a factory
+-> If you want the next element, be sure to contact the contracter by Thursday, those iron
+  > coil shipments are wanted by the client on Saturday and we still have to check alloy
+  > content and chemical runs
+-> stream_cons does not generate another stream
+-> streams cons and nil are both opaque in what they present beyond their immediate call
+-> from stream_cons, you won't get another stream but rather an instance of what's inside
+  -> stream_nil(): stream_cons(...)
+  -> stream_cons(...): stream_cons(...)
+-> What in the FUCK was that analogy?
+-> The filter function is also lazy, people forget that.
+-> This allows for easier garbage takeout on the backend of it when you don't want excess.
+-> Remember to call Bang on some of the next stream calls. Otherwise it won't process the
+  > next step.
+-> Streams are useful for the single step process of things.
+-> Think of that stream of photos I guess.
+-> This is the last thing we're """learning"""
+-> Think of that stream of photos I guess.
+-> This is the last thing we're """learning"""
+-> Careful with stream infiniteness in this programming language, such as NxN matrix, using
+  > diagonal approach rather than single row/col values.
