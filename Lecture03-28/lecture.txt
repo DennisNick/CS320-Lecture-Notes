@@ -1,0 +1,23 @@
+March 28th Notes (Not much today)
+----------------
+
+More stream talk.
+
+Functional Languages -> Clojure/Lisp
+
+Some showing of some stuff at work with streams
+
+Think of stream actions in terms of ([1]->[])->([2]->[])->([3]->[])
+Also, Streams in the simplest case lack randomization. They proceed from a saved value.
+
+ln2 => need partial_sum, n, sign
+
+Erasthonese Sieve and stuff.
+
+Stream as a standalone is an opaque object, clearly doesn't have a defined/concrete being. 
+Once "delay" is called, the formation takes on something more tangible as stream_cons(...)
+
+->$delay(stream_cons(...))
+
+Streams are the secret weapon of functional programming and stuff I guess.
+And we'll be doing Graph node stuff with streams also.
