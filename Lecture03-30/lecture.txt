@@ -1,0 +1,16 @@
+March 30th Notes
+----------------
+
+Some stream stuff with Bacon.js
+
+More stuff
+
+> slist => stack based implementation of a list
+> qlist => queue based implementation of a list
+
+Cycle stuff and marks with Queenpuzzle and graph traversing and stuff
+
+FRP -> Functional Reactive Programming
+-> Does stuff
+-> Cool name
+

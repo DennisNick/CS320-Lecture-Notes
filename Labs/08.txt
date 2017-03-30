@@ -1,0 +1,24 @@
+Eager Vs Lazy
+-------------
+
+There are differing intermediate steps between lazy and eager.
+
+f(x) = x + x
+e = 1 + 1
+eager: f(e) = f(1+1) = f(2) = 2+2 = 4
+lazy: f(e) = e + e = (1+1) + (1+1) = 2+2 = 4
+
+The dynamic here is that the inner evaluation is not taken care of immediately in the lazy evaulation than it is in the eager evaluation.
+
+((((e_1*e_2 -> e_1*v_2 iff e_2*v_2))))
+eager: (x*e_1)v -> e_1[x -> v]
+lazy: (x*e_1)e_2 -> e_1[x -> e_2]
+
+Lazy representations have some nice perks:
+-Decent memory caching
+-Continuous/Infinite implementations
+
+type constructor: lazy(?)
+keywords: 
+  -$delay: a -> lazy(a)
+  -!: lazy(a) -> a
