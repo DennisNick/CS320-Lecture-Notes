@@ -1,0 +1,20 @@
+April 6th Notes
+---------------
+
+->Game strategizing for this worm game thing.
+->Graph based implementation with AI and Machine Learning and that stuff.
+
+->Streams are a thing we will continuously go over. 
+
+->Sometimes, an internal state inside of an outer function can be necessary for building
+  >something
+
+->State saving Series: 1, -1/2, 1/3, -1/4
+  -> 1, 1-1/2, 1-1/2+1/3, 1-1/2+1/3-1/4
+
+->General terms for a sequence: Scan/Fold
+
+->Scanning is a very common operation used to tool over the current prospectus with the 
+  -> future affordable prospecti
+
+->Property is just a stream with an initial value?
