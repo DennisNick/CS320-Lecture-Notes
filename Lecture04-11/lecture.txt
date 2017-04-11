@@ -1,0 +1,26 @@
+April 11th Notes
+----------------
+
+Doublets
+--------
+-> In terms of actual computation for this puzzle, we'd need a dictionayr and a track of
+  > two other terms.
+
+-> We need to be able to explain the code too. 
+-> Don't overthink the problem.
+
+-> Being vague from the programmer's perspective allows for code to adapt in differing 
+  > settings and across other ways.
+
+Alan Kay: Extreme late bindings of all forms, try and postpone making a commitment.
+
+-> May need some format of Memoization for this.
+-> Marking the Nodes is also a pretty useful thing.
+-> Path retention in a Queue like struct would also work. Simply keep aware of cycles.
+
+-> There is a lot of flexibility with late-binding here.
+-> The sats file will specify the kind of functions you want, *cough* C header file *cough*
+-> The dats file is the actual implementation, *cough* normal C file *cough*
+
+-> Branching on AI territory here, with need for Heuristics and the like
+
