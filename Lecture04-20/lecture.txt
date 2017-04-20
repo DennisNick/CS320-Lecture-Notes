@@ -1,0 +1,28 @@
+April 20th Notes
+----------------
+
+There's some stuff about graph marking today.
+
+Can either do with a hash table or another Board for style programming.
+
+-> Marking differs from Breadth First Search in Order.
+  > BFS as given in the quiz is order sensitive.
+  > Marking means a search is insensitive.
+  > If order matters, you'll need a Heuristic.
+
+val Marked = myhashtbl_make_nil(1024)
+val-cons0(w, _) = nx
+val-~None_vt() = theMarked.insert(w,0)
+
+Runtime checking is crucial. Particularly for imperative programming.
+
+"Continuation" Talk:
+--------------------
+-> Some Javascript talk too. 
+-> Important to know the computational model of any language as you start it.
+-> Humanity is selfish, we're talking ethics now. 
+-> Javascript schdule handling supposedly waits for completion of an application.
+-> Run and stop, run and stop is the way for doing animating programming
+-> "Continuation" - Resuming a form of execution after meeting a stop point and returning.
+-> Essentially, think running to a save point, going to a different program, than back
+-> All about that checkpoint.
